@@ -98,7 +98,7 @@ html{scroll-behavior:smooth;}
 <section class="contact-section">
 <div class="contact-grid">
 <div class="contact-form fade-in">
-<form action="mailto:orangeceour@gmail.com" method="post" enctype="text/plain">
+<form id="contact-form" action="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ocorangecoeur@gmail.com">
 <div class="form-row">
 <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="First Name" placeholder="John" required></div>
 <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="Last Name" placeholder="Doe" required></div>
@@ -118,7 +118,7 @@ html{scroll-behavior:smooth;}
 </div>
 <div class="contact-info fade-in">
 <h3>Direct Contact Info</h3>
-<div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><p><a href="mailto:orangeceour@gmail.com">orangeceour@gmail.com</a></p></div></div>
+<div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ocorangecoeur@gmail.com">ocorangecoeur@gmail.com</a></p></div></div>
 <div class="info-item"><div class="info-icon"><i class="fas fa-clock"></i></div><div><h4>Response Time</h4><p>Within 24 business hours</p></div></div>
 <div class="info-item"><div class="info-icon"><i class="fas fa-headset"></i></div><div><h4>Consultation</h4><p>Speak with an expert consultant, not a salesperson</p></div></div>
 <div class="response-badge"><i class="fas fa-bolt"></i> Expert response guaranteed within 24 hours</div>
@@ -141,6 +141,8 @@ fadeElements.forEach(el=>observer.observe(el));
 const mobileMenuBtn=document.querySelector('.mobile-menu-btn');
 const navLinks=document.querySelector('.nav-links');
 if(mobileMenuBtn){mobileMenuBtn.addEventListener('click',()=>{navLinks.style.display=navLinks.style.display==='flex'?'none':'flex';navLinks.style.position='absolute';navLinks.style.top='70px';navLinks.style.left='0';navLinks.style.right='0';navLinks.style.flexDirection='column';navLinks.style.background='white';navLinks.style.padding='2rem';navLinks.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';navLinks.style.gap='1.5rem';});}
+const contactForm=document.querySelector('#contact-form');
+if(contactForm){contactForm.addEventListener('submit',(event)=>{event.preventDefault();const formData=new FormData(contactForm);const fullName=[formData.get('First Name'),formData.get('Last Name')].filter(Boolean).join(' ');const subject=fullName?`Website inquiry from ${fullName}`:'Website inquiry';const body=Array.from(formData.entries()).map(([label,value])=>`${label}: ${value}`).join('\n');const params=new URLSearchParams({view:'cm',fs:'1',to:'ocorangecoeur@gmail.com',su:subject,body});window.location.href=`https://mail.google.com/mail/?${params}`;});}
 </script>
 </body>
 </html>
