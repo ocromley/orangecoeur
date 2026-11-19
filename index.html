@@ -11,8 +11,8 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Poppins',sans-serif;color:var(--dark);overflow-x:hidden;background:var(--white);line-height:1.6;}
 html{scroll-behavior:smooth;}
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.6rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 2px 20px rgba(0,0,0,0.08);}
-.logo{display:flex;align-items:center;text-decoration:none;}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.6rem 5% 0.6rem 3%;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 2px 20px rgba(0,0,0,0.08);}
+.logo{display:flex;align-items:center;text-decoration:none;margin-right:2rem;}
 .logo-img{height:80px;width:auto;object-fit:contain;border-radius:8px;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{color:var(--dark);text-decoration:none;font-weight:500;font-size:0.95rem;position:relative;transition:color 0.3s;padding:0.5rem 0;}
@@ -77,23 +77,31 @@ html{scroll-behavior:smooth;}
 .hero-services li:hover,.hero-services li:focus-within{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.5);}
 .hero-services a:focus-visible{outline:2px solid var(--white);outline-offset:3px;border-radius:50px;}
 .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;}
-.hero-visual{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:500px;height:500px;z-index:1;}
-.hero-visual .heart-orange{width:300px;height:300px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
-.hero-visual .heart-orange svg{width:100%;height:100%;filter:drop-shadow(0 20px 60px rgba(242,101,34,0.4));}
-.floating-shape{position:absolute;border-radius:20px;opacity:0.6;}
-.shape-1{width:120px;height:120px;background:linear-gradient(135deg,var(--orange),var(--orange-light));top:10%;right:10%;animation:floatShape 6s ease-in-out infinite;border-radius:30% 70% 70% 30% / 30% 30% 70% 70%;}
-.shape-2{width:80px;height:80px;background:linear-gradient(135deg,var(--purple),var(--purple-light));bottom:20%;left:10%;animation:floatShape 8s ease-in-out infinite reverse;border-radius:60% 40% 30% 70% / 60% 30% 70% 40%;}
-.shape-3{width:60px;height:60px;background:rgba(255,255,255,0.1);top:30%;left:5%;animation:floatShape 7s ease-in-out infinite;border-radius:50%;}
-@keyframes floatShape{0%,100%{transform:translate(0,0) rotate(0deg);}50%{transform:translate(20px,-20px) rotate(10deg);}}
+.hero-visual{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:430px;height:430px;z-index:1;display:grid;place-items:center;}
+.hero-logo-glow{position:absolute;width:72%;height:72%;border-radius:50%;background:radial-gradient(circle,rgba(255,140,66,0.3),rgba(139,92,246,0.14) 55%,transparent 72%);filter:blur(14px);animation:logoGlow 5s ease-in-out infinite;}
+.hero-logo-orbit{position:absolute;width:88%;height:88%;border:1px solid rgba(255,255,255,0.22);border-radius:50%;box-shadow:0 0 34px rgba(255,140,66,0.1),inset 0 0 34px rgba(139,92,246,0.08);animation:logoOrbit 24s linear infinite;}
+.hero-brand-logo{position:relative;width:72%;height:72%;object-fit:contain;border-radius:50%;box-shadow:0 22px 65px rgba(15,13,43,0.3);animation:logoFloat 5s ease-in-out infinite;}
+@keyframes logoFloat{0%,100%{transform:translateY(0) scale(1);}50%{transform:translateY(-12px) scale(1.025);}}
+@keyframes logoGlow{0%,100%{opacity:0.65;transform:scale(0.94);}50%{opacity:1;transform:scale(1.06);}}
+@keyframes logoOrbit{to{transform:rotate(360deg);}}
+@media(prefers-reduced-motion:reduce){.hero-logo-glow,.hero-logo-orbit,.hero-brand-logo{animation:none;}}
 .audience{padding:6rem 5%;background:var(--cream);}
 .audience-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;max-width:1200px;margin:0 auto;}
 .audience-card{overflow:hidden;background:var(--white);border:1px solid rgba(0,0,0,0.07);border-radius:20px;box-shadow:0 8px 24px rgba(30,27,75,0.05);transition:transform 0.3s ease,box-shadow 0.3s ease;}
-.audience-card:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(30,27,75,0.12);}
-.audience-card img{display:block;width:100%;height:180px;object-fit:cover;transition:transform 0.4s ease;}
-.audience-card:hover img{transform:scale(1.04);}
+.audience-card:hover{transform:translateY(-6px);}
+.audience-card:hover{box-shadow:0 18px 36px rgba(30,27,75,0.12);}
+.audience-image-button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;overflow:hidden;}
+.audience-image-button img{display:block;width:100%;height:180px;object-fit:cover;transition:transform 0.4s ease;}
+.audience-image-button:hover img,.audience-image-button:focus-visible img{transform:scale(1.04);}
+.audience-image-button:focus-visible{outline:3px solid var(--orange);outline-offset:-3px;}
 .audience-card-content{padding:1.4rem 1.5rem 1.6rem;}
 .audience-card h3{font-size:1.1rem;margin-bottom:0.6rem;}
 .audience-card p{color:var(--gray);font-size:0.9rem;line-height:1.65;}
+.photo-lightbox{width:min(92vw,1100px);max-width:none;max-height:90vh;margin:auto;padding:0;border:0;border-radius:16px;background:var(--dark);overflow:visible;}
+.photo-lightbox::backdrop{background:rgba(15,13,43,0.82);backdrop-filter:blur(4px);}
+.photo-lightbox img{display:block;max-width:100%;max-height:90vh;margin:auto;border-radius:16px;object-fit:contain;}
+.photo-lightbox-close{position:absolute;top:-16px;right:-16px;width:42px;height:42px;border:2px solid white;border-radius:50%;background:var(--orange);color:white;font-size:1.5rem;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.25);}
+.photo-lightbox-close:focus-visible{outline:3px solid var(--white);outline-offset:3px;}
 .why-us{padding:6rem 5%;background:linear-gradient(135deg,var(--dark),#312E81);position:relative;overflow:hidden;}
 .why-us .section-title{color:var(--white);}
 .why-us .section-subtitle{color:rgba(255,255,255,0.76);}
@@ -142,7 +150,7 @@ html{scroll-behavior:smooth;}
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-languages" aria-label="Languages spoken: Ukrainian and Polish"><span class="nav-language" title="Ukrainian"><span class="language-flag language-flag-ua" aria-hidden="true"></span>UA</span><span class="nav-language" title="Polish"><span class="language-flag language-flag-pl" aria-hidden="true"></span>PL</span></div>
-        <a href="contact.html" class="nav-cta">Start a Project</a>
+        <a href="contact.html#contact-form" class="nav-cta">Start a Project</a>
         <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
     </nav>
     <section class="hero" id="home">
@@ -158,30 +166,14 @@ html{scroll-behavior:smooth;}
                 <li><a href="services.html#website-maintenance">Website Maintenance</a></li>
             </ul>
             <div class="hero-buttons">
-                <a href="contact.html" class="btn-primary"><i class="fas fa-calendar-check"></i>Start a Project</a>
+                <a href="contact.html#contact-form" class="btn-primary"><i class="fas fa-calendar-check"></i>Start a Project</a>
                 <a href="services.html" class="btn-secondary"><i class="fas fa-arrow-right"></i>Explore Services</a>
             </div>
         </div>
         <div class="hero-visual">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
-            <div class="heart-orange">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#F26522"/><stop offset="100%" style="stop-color:#FF8C42"/></linearGradient>
-                        <linearGradient id="sliceGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#FFE4C4"/><stop offset="100%" style="stop-color:#FFDAB9"/></linearGradient>
-                    </defs>
-                    <path d="M100,180 C100,180 20,120 20,70 C20,40 45,20 70,20 C85,20 95,30 100,40 C105,30 115,20 130,20 C155,20 180,40 180,70 C180,120 100,180 100,180Z" fill="url(#heartGrad)"/>
-                    <path d="M100,40 L100,180 C100,180 180,120 180,70 C180,40 155,20 130,20 C115,20 105,30 100,40Z" fill="url(#sliceGrad)" opacity="0.6"/>
-                    <ellipse cx="140" cy="80" rx="25" ry="35" fill="none" stroke="#F26522" stroke-width="2" opacity="0.5"/>
-                    <line x1="140" y1="45" x2="140" y2="115" stroke="#F26522" stroke-width="1.5" opacity="0.4"/>
-                    <line x1="115" y1="65" x2="165" y2="65" stroke="#F26522" stroke-width="1.5" opacity="0.4"/>
-                    <line x1="120" y1="90" x2="160" y2="90" stroke="#F26522" stroke-width="1.5" opacity="0.4"/>
-                    <path d="M100,15 Q105,5 110,15" fill="none" stroke="#4ADE80" stroke-width="3" stroke-linecap="round"/>
-                    <ellipse cx="108" cy="12" rx="6" ry="3" fill="#4ADE80" transform="rotate(-30 108 12)"/>
-                </svg>
-            </div>
+            <span class="hero-logo-glow" aria-hidden="true"></span>
+            <span class="hero-logo-orbit" aria-hidden="true"></span>
+            <img class="hero-brand-logo" src="logo.jpg" alt="Orange Coeur logo">
         </div>
     </section>
     <section class="audience" id="who-i-work-with">
@@ -191,28 +183,36 @@ html{scroll-behavior:smooth;}
         </div>
         <div class="audience-grid">
             <article class="audience-card fade-in">
-                <img src="small.bussiness.jpg" alt="Small business owner working at a laptop" loading="lazy">
+                <button class="audience-image-button" type="button" aria-label="Enlarge photo: Small business owner working at a laptop">
+                    <img src="small.bussiness.jpg" alt="Small business owner working at a laptop" loading="lazy">
+                </button>
                 <div class="audience-card-content">
                     <h3>Small Businesses</h3>
                     <p>Establish a professional online presence that helps customers understand what you do.</p>
                 </div>
             </article>
             <article class="audience-card fade-in">
-                <img src="startup.jpg" alt="Startup team collaborating around a shared idea" loading="lazy">
+                <button class="audience-image-button" type="button" aria-label="Enlarge photo: Startup team collaborating around a shared idea">
+                    <img src="startup.jpg" alt="Startup team collaborating around a shared idea" loading="lazy">
+                </button>
                 <div class="audience-card-content">
                     <h3>Startups</h3>
                     <p>Launch your new business with a website built around its vision.</p>
                 </div>
             </article>
             <article class="audience-card fade-in">
-                <img src="nonforprof.jpg" alt="Nonprofit community program participants gathered together" loading="lazy">
+                <button class="audience-image-button" type="button" aria-label="Enlarge photo: Nonprofit community program participants gathered together">
+                    <img src="nonforprof.jpg" alt="Nonprofit community program participants gathered together" loading="lazy">
+                </button>
                 <div class="audience-card-content">
                     <h3>Nonprofit Organizations</h3>
                     <p>Communicate your mission, programs, and impact with clarity.</p>
                 </div>
             </article>
             <article class="audience-card fade-in">
-                <img src="profservis.jpg" alt="Professional advising a client at a computer" loading="lazy">
+                <button class="audience-image-button" type="button" aria-label="Enlarge photo: Professional advising a client at a computer">
+                    <img src="profservis.jpg" alt="Professional advising a client at a computer" loading="lazy">
+                </button>
                 <div class="audience-card-content">
                     <h3>Professional Services</h3>
                     <p>Present your expertise and connect with prospective clients.</p>
@@ -220,6 +220,10 @@ html{scroll-behavior:smooth;}
             </article>
         </div>
     </section>
+    <dialog class="photo-lightbox" aria-label="Enlarged photo">
+        <button class="photo-lightbox-close" type="button" aria-label="Close enlarged photo">&times;</button>
+        <img src="" alt="">
+    </dialog>
     <section class="why-us" id="why-orange-coeur">
         <div class="section-header fade-in">
             <span class="section-tag">Why Orange Coeur</span>
@@ -289,7 +293,7 @@ html{scroll-behavior:smooth;}
     <section class="final-cta">
         <h2>Have a Website Project in Mind?</h2>
         <p>Let’s turn your idea into a digital experience that works for your business.</p>
-        <a href="contact.html" class="btn-primary">Start a Project <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html#contact-form" class="btn-primary">Start a Project <i class="fas fa-arrow-right"></i></a>
     </section>
     <footer class="footer">
         <div class="footer-grid">
@@ -339,6 +343,11 @@ fadeElements.forEach(el=>observer.observe(el));
 const mobileMenuBtn=document.querySelector('.mobile-menu-btn');
 const navLinks=document.querySelector('.nav-links');
 if(mobileMenuBtn){mobileMenuBtn.addEventListener('click',()=>{navLinks.style.display=navLinks.style.display==='flex'?'none':'flex';navLinks.style.position='absolute';navLinks.style.top='70px';navLinks.style.left='0';navLinks.style.right='0';navLinks.style.flexDirection='column';navLinks.style.background='white';navLinks.style.padding='2rem';navLinks.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';navLinks.style.gap='1.5rem';});}
+const photoLightbox=document.querySelector('.photo-lightbox');
+const lightboxImage=photoLightbox.querySelector('img');
+document.querySelectorAll('.audience-image-button').forEach(button=>{button.addEventListener('click',()=>{const image=button.querySelector('img');lightboxImage.src=image.src;lightboxImage.alt=image.alt;photoLightbox.showModal();});});
+photoLightbox.querySelector('.photo-lightbox-close').addEventListener('click',()=>photoLightbox.close());
+photoLightbox.addEventListener('click',(event)=>{if(event.target===photoLightbox){photoLightbox.close();}});
 </script>
 </body>
 </html>
