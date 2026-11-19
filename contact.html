@@ -22,6 +22,11 @@ html{scroll-behavior:smooth;}
 .nav-links a.active{color:var(--orange);font-weight:700;background:linear-gradient(135deg,rgba(242,101,34,0.12),rgba(255,140,66,0.06));padding:0.5rem 1.2rem;border-radius:50px;}
 .nav-cta{background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:white;padding:0.6rem 1.5rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;box-shadow:0 4px 15px rgba(242,101,34,0.3);}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(242,101,34,0.4);}
+.nav-languages{display:flex;align-items:center;gap:0.55rem;margin-left:auto;margin-right:1rem;line-height:1;}
+.nav-language{display:inline-flex;align-items:center;gap:0.3rem;padding:0.35rem 0.45rem;border-radius:8px;background:rgba(30,27,75,0.06);color:var(--dark);font-size:0.75rem;font-weight:700;}
+.language-flag{width:14px;height:14px;border:1px solid rgba(30,27,75,0.16);border-radius:2px;display:inline-block;}
+.language-flag-ua{background:linear-gradient(to bottom,#0057B8 50%,#FFD700 50%);}
+.language-flag-pl{background:linear-gradient(to bottom,#FFFFFF 50%,#DC143C 50%);}
 .mobile-menu-btn{display:none;background:none;border:none;color:var(--dark);font-size:1.5rem;cursor:pointer;}
 .section-header{text-align:center;max-width:700px;margin:0 auto 4rem;}
 .section-tag{display:inline-block;background:linear-gradient(135deg,var(--orange),var(--orange-light));color:white;padding:0.4rem 1.2rem;border-radius:50px;font-size:0.85rem;font-weight:600;margin-bottom:1rem;}
@@ -72,6 +77,7 @@ html{scroll-behavior:smooth;}
 .form-group button{width:100%;padding:1rem;background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:white;border:none;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.3s;box-shadow:0 8px 30px rgba(242,101,34,0.3);}
 .form-group button:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,101,34,0.4);}
 .contact-info{padding-top:1rem;}
+
 .contact-info h3{font-size:1.5rem;font-weight:700;color:var(--dark);margin-bottom:1.5rem;}
 .info-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem;}
 .info-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--orange),var(--orange-light));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:white;flex-shrink:0;}
@@ -93,6 +99,7 @@ html{scroll-behavior:smooth;}
 <li><a href="our-work.html">Our Work</a></li>
 <li><a href="contact.html" class="active">Contact</a></li>
 </ul>
+<div class="nav-languages" aria-label="Languages spoken: Ukrainian and Polish"><span class="nav-language" title="Ukrainian"><span class="language-flag language-flag-ua" aria-hidden="true"></span>UA</span><span class="nav-language" title="Polish"><span class="language-flag language-flag-pl" aria-hidden="true"></span>PL</span></div>
 <a href="contact.html" class="nav-cta">Start a Project</a>
 <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
 </nav>
@@ -100,7 +107,7 @@ html{scroll-behavior:smooth;}
 <section class="contact-section">
 <div class="contact-grid">
 <div class="contact-form fade-in">
-<form id="contact-form" action="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@orangecoeurconsulting.com">
+<form id="contact-form">
 <h2>Project Inquiry Form</h2>
 <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="Name" autocomplete="name" required></div>
 <div class="form-group"><label for="business">Business / Organization</label><input type="text" id="business" name="Business / Organization" autocomplete="organization"></div>
@@ -114,7 +121,7 @@ html{scroll-behavior:smooth;}
 </div>
 <div class="contact-info fade-in">
 <h3>Direct Contact</h3>
-<div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><p><a href="mailto:info@orangecoeurconsulting.com">info@orangecoeurconsulting.com</a></p></div></div>
+<div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@orangecoeurconsulting.com" target="_blank" rel="noopener noreferrer" aria-label="Compose an email to info@orangecoeurconsulting.com">info@orangecoeurconsulting.com</a></p></div></div>
 <div class="info-item"><div class="info-icon"><i class="fas fa-location-dot"></i></div><div><h4>Location</h4><p>Chicago, Illinois, USA</p></div></div>
 <p>Orange Coeur works directly with clients to understand their requirements and develop practical digital solutions.</p>
 <p class="contact-thanks">Thank you for considering Orange Coeur.</p>
@@ -123,7 +130,7 @@ html{scroll-behavior:smooth;}
 </section>
 <footer class="footer">
 <div class="footer-grid">
-<div class="footer-brand"><img src="logo.jpg" alt="Orange Coeur" class="footer-logo-img"><p>IT Strategy with Heart. Innovation with Purpose. We bridge the gap between complex technology and your core business goals.</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a></div></div>
+<div class="footer-brand"><img src="logo.jpg" alt="Orange Coeur" class="footer-logo-img"><p>IT Strategy with Heart. Innovation with Purpose. We bridge the gap between complex technology and your core business goals.</p><div class="footer-social"><a href="https://www.linkedin.com/company/orange-coeur/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="Orange Coeur on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a><a href="https://www.facebook.com/profile.php?id=61595655153749" target="_blank" rel="noopener noreferrer" aria-label="Orange Coeur on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></div></div>
 <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="our-work.html">Our Work</a></li><li><a href="contact.html">Contact</a></li></ul></div>
 <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul></div>
 <div class="newsletter"><h4>Stay Ahead of IT Trends</h4><p>Subscribe to our monthly brief for the latest insights.</p><form class="newsletter-form"><input type="email" placeholder="Enter your email"><button type="submit">Subscribe</button></form></div>
@@ -138,7 +145,7 @@ const mobileMenuBtn=document.querySelector('.mobile-menu-btn');
 const navLinks=document.querySelector('.nav-links');
 if(mobileMenuBtn){mobileMenuBtn.addEventListener('click',()=>{navLinks.style.display=navLinks.style.display==='flex'?'none':'flex';navLinks.style.position='absolute';navLinks.style.top='70px';navLinks.style.left='0';navLinks.style.right='0';navLinks.style.flexDirection='column';navLinks.style.background='white';navLinks.style.padding='2rem';navLinks.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';navLinks.style.gap='1.5rem';});}
 const contactForm=document.querySelector('#contact-form');
-if(contactForm){contactForm.addEventListener('submit',(event)=>{event.preventDefault();const formData=new FormData(contactForm);const name=formData.get('Name');const subject=`Website project inquiry from ${name}`;const body=Array.from(formData.entries()).map(([label,value])=>`${label}: ${value}`).join('\n');const params=new URLSearchParams({view:'cm',fs:'1',to:'info@orangecoeurconsulting.com',su:subject,body});window.location.href=`https://mail.google.com/mail/?${params}`;});}
+if(contactForm){contactForm.addEventListener('submit',(event)=>{event.preventDefault();const formData=new FormData(contactForm);const name=formData.get('Name');const subject=`Website project inquiry from ${name}`;const body=Array.from(formData.entries()).map(([label,value])=>`${label}: ${value}`).join('\n');const params=new URLSearchParams({view:'cm',fs:'1',to:'info@orangecoeurconsulting.com',su:subject,body});const composeWindow=window.open(`https://mail.google.com/mail/?${params}`,'_blank');if(composeWindow){composeWindow.opener=null;}else{alert('Please allow pop-ups to open the email draft. The website will remain open.');}});}
 </script>
 </body>
 </html>
