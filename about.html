@@ -27,10 +27,10 @@ html{scroll-behavior:smooth;}
 .language-flag{width:14px;height:14px;border:1px solid rgba(30,27,75,0.16);border-radius:2px;display:inline-block;}
 .language-flag-ua{background:linear-gradient(to bottom,#0057B8 50%,#FFD700 50%);}
 .language-flag-pl{background:linear-gradient(to bottom,#FFFFFF 50%,#DC143C 50%);}
-.back-to-top{position:fixed;right:1.25rem;bottom:1.25rem;z-index:1100;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange-dark));box-shadow:0 4px 15px rgba(242,101,34,0.35);color:var(--white);text-decoration:none;opacity:0;visibility:hidden;transform:translateY(0.5rem);transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s ease;}
-.back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0);}
-.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(242,101,34,0.45);}
-.back-to-top:focus-visible{outline:3px solid var(--dark);outline-offset:3px;}
+.next-page{position:fixed;right:1.25rem;bottom:1.25rem;z-index:1100;display:flex;align-items:center;gap:0.65rem;min-height:48px;padding:0 1.1rem;border-radius:50px;background:linear-gradient(135deg,var(--orange),var(--orange-dark));box-shadow:0 4px 15px rgba(242,101,34,0.35);color:var(--white);text-decoration:none;font-size:0.88rem;font-weight:600;opacity:0;visibility:hidden;transform:translateY(0.5rem);transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s ease,box-shadow 0.2s ease;}
+.next-page.is-visible{opacity:1;visibility:visible;transform:translateY(0);}
+.next-page:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(242,101,34,0.45);}
+.next-page:focus-visible{outline:3px solid var(--dark);outline-offset:3px;}
 .mobile-menu-btn{display:none;background:none;border:none;color:var(--dark);font-size:1.5rem;cursor:pointer;}
 .section-header{text-align:center;max-width:700px;margin:0 auto 4rem;}
 .section-tag{display:inline-block;background:linear-gradient(135deg,var(--orange),var(--orange-light));color:white;padding:0.4rem 1.2rem;border-radius:50px;font-size:0.85rem;font-weight:600;margin-bottom:1rem;}
@@ -239,12 +239,12 @@ html{scroll-behavior:smooth;}
             <p>© 2026 Orange Coeur Consulting. All rights reserved.</p>
         </div>
     </footer>
-<a class="back-to-top" href="#top" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+<a class="next-page" href="services.html#top" aria-label="Next page: Services" title="Next: Services"><span>Next: Services</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 <script>
-const backToTop=document.querySelector('.back-to-top');
-const toggleBackToTop=()=>backToTop.classList.toggle('is-visible',window.scrollY>300);
-window.addEventListener('scroll',toggleBackToTop,{passive:true});
-toggleBackToTop();
+const nextPage=document.querySelector('.next-page');
+const toggleNextPage=()=>nextPage.classList.toggle('is-visible',window.scrollY>300);
+window.addEventListener('scroll',toggleNextPage,{passive:true});
+toggleNextPage();
 const fadeElements=document.querySelectorAll('.fade-in');
 const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.1});
 fadeElements.forEach(el=>observer.observe(el));
