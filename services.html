@@ -65,8 +65,12 @@ html{scroll-behavior:smooth;}
 .page-header p{color:rgba(255,255,255,0.8);font-size:1.1rem;max-width:700px;margin:1rem auto 0;position:relative;z-index:2;}
 .services{padding:6rem 5%;background:var(--white);}
 .services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;max-width:1200px;margin:0 auto;}
+.service-block:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 1rem);justify-self:center;}
 .service-block{scroll-margin-top:100px;background:var(--white);border-radius:24px;padding:2.5rem;border:1px solid rgba(0,0,0,0.07);transition:all 0.3s ease;position:relative;overflow:hidden;}
 .service-image{display:block;width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:1.75rem;}
+.service-graphic{display:flex;align-items:center;justify-content:center;gap:1.5rem;background:linear-gradient(135deg,#FFF1E8,#F3EFFF);color:var(--orange-dark);}
+.service-graphic i{font-size:3.5rem;}
+.service-graphic i:nth-child(2){font-size:4.5rem;color:var(--purple);}
 .service-block::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--orange),var(--purple));transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
 .service-block:hover::before{transform:scaleX(1);}
 .service-block:hover{box-shadow:0 20px 60px rgba(0,0,0,0.08);transform:translateY(-5px);}
@@ -88,7 +92,7 @@ html{scroll-behavior:smooth;}
 .cta-banner::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
 .cta-banner h2{font-size:2.5rem;font-weight:700;color:var(--white);margin-bottom:1rem;position:relative;z-index:1;}
 .cta-banner p{color:rgba(255,255,255,0.7);font-size:1.1rem;max-width:600px;margin:0 auto 2rem;position:relative;z-index:1;}
-@media(max-width:768px){.page-header h1{font-size:2.5rem;}.services-grid,.process-grid{grid-template-columns:1fr;}.service-block{padding:2rem;}.cta-banner h2{font-size:2rem;}}
+@media(max-width:768px){.page-header h1{font-size:2.5rem;}.services-grid,.process-grid{grid-template-columns:1fr;}.service-block{padding:2rem;}.service-block:last-child:nth-child(odd){grid-column:auto;width:100%;}.cta-banner h2{font-size:2rem;}}
     </style>
 </head>
 <body>
@@ -107,8 +111,8 @@ html{scroll-behavior:smooth;}
     </nav>
     <section class="page-header">
         <div>
-            <h1>Web Design &amp; <span>Development</span></h1>
-            <p>From the first idea to launch and ongoing updates, I create practical websites shaped around your business, audience, and goals.</p>
+            <h1>Digital, Web &amp; Print <span>Services</span></h1>
+            <p>From websites and practical digital tools to custom graphic and print materials, I create work shaped around your business, audience, and goals.</p>
         </div>
     </section>
     <section class="services">
@@ -159,6 +163,21 @@ html{scroll-behavior:smooth;}
                     <li><i class="fas fa-check"></i> Content and website updates</li>
                     <li><i class="fas fa-check"></i> Troubleshooting and small improvements</li>
                     <li><i class="fas fa-check"></i> Ongoing support to keep your site current</li>
+                </ul>
+            </article>
+            <article class="service-block fade-in" id="graphic-design-print">
+                <img class="service-image" src="Event Flyer Collage.png" alt="Orange Coeur flyer and event-promotion design samples" loading="lazy">
+                <div class="service-header">
+                    <div><div class="service-label">05</div><h3>Graphic Design &amp; Print Materials</h3></div>
+                </div>
+                <p class="service-description">Professional, visually engaging designs for your business and marketing needs.</p>
+                <p class="service-description">We create custom print materials that communicate your message, strengthen your brand identity, and help your business make a lasting impression.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i><span><strong>Flyer &amp; Brochure Design</strong> – Promotional flyers, company brochures, and informational materials.</span></li>
+                    <li><i class="fas fa-check"></i><span><strong>Business Cards &amp; Stationery</strong> – Business cards, letterheads, envelopes, and branded documents.</span></li>
+                    <li><i class="fas fa-check"></i><span><strong>Posters &amp; Event Materials</strong> – Event posters, invitations, programs, and promotional layouts.</span></li>
+                    <li><i class="fas fa-check"></i><span><strong>Marketing Materials</strong> – Product sheets, catalogs, menus, and advertising materials.</span></li>
+                    <li><i class="fas fa-check"></i><span><strong>Print-Ready Layouts</strong> – Professionally prepared files for commercial printing.</span></li>
                 </ul>
             </article>
         </div>

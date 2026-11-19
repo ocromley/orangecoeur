@@ -68,6 +68,8 @@ html{scroll-behavior:smooth;}
 .work-visual{height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#F8FAFC;}
 .work-visual img{display:block;width:100%;height:100%;object-fit:contain;padding:1rem;}
 .work-card:nth-child(3) .work-visual img{padding:0;object-fit:cover;}
+.work-visual.work-samples{height:300px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:0.5rem;padding:0.75rem;}
+.work-visual.work-samples img{min-width:0;min-height:0;padding:0.25rem;background:var(--white);border-radius:8px;object-fit:contain;}
 .work-content{padding:1.5rem;}
 .work-type{display:inline-block;margin-bottom:0.75rem;color:var(--orange-dark);font-size:0.76rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;}
 .work-content h3{font-size:1.15rem;margin-bottom:0.65rem;}
@@ -126,6 +128,16 @@ html{scroll-behavior:smooth;}
 <article class="work-card fade-in">
 <div class="work-visual"><img src="Proposed self cont..png" alt="Proposed Orange Coeur business website concept shown on laptop and phone" loading="lazy"></div>
 <div class="work-content"><span class="work-type">Proposed Self-Initiated Concept · Not Yet Built</span><h3>Business Website Concept</h3><p>A recommended demonstration project exploring business website structure, responsive layouts, and front-end development.</p><p class="work-note">This is a proposed concept, not a completed project or client engagement.</p></div>
+</article>
+<article class="work-card fade-in">
+<div class="work-visual work-samples">
+<img src="Flyers.png" alt="Flyer and business stationery design sample" loading="lazy">
+<img src="bussinesstat.jpg" alt="Business brochure and promotional material sample" loading="lazy">
+<img src="Event Flyer Collage.png" alt="Orange Coeur event flyer design samples" loading="lazy">
+<img src="Mark.Mat.jpg" alt="Marketing and print collateral design sample" loading="lazy">
+<img src="Printalyouts.jpg" alt="Print layout and business collateral design sample" loading="lazy">
+</div>
+<div class="work-content"><span class="work-type">Graphic Design &amp; Print Materials</span><h3>Flyers, Event Materials &amp; Brand Collateral</h3><p>A selection of flyer, event, brochure, and business stationery designs showcasing print layouts and promotional materials.</p></div>
 </article>
 </div>
 <div class="work-cta fade-in"><i class="fas fa-pen-ruler" aria-hidden="true"></i><h3>Have a project in mind?</h3><p>Let’s talk about your website, digital platform, or custom technology needs.</p><a href="contact.html#contact-form" class="btn-primary">Start a Conversation</a></div>
