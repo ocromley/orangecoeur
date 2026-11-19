@@ -13,7 +13,7 @@ body{font-family:'Poppins',sans-serif;color:var(--dark);overflow-x:hidden;backgr
 html{scroll-behavior:smooth;}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.6rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 2px 20px rgba(0,0,0,0.08);}
 .logo{display:flex;align-items:center;text-decoration:none;}
-.logo-img{height:70px;width:auto;object-fit:contain;border-radius:8px;}
+.logo-img{height:80px;width:auto;object-fit:contain;border-radius:8px;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{color:var(--dark);text-decoration:none;font-weight:500;font-size:0.95rem;position:relative;transition:color 0.3s;padding:0.5rem 0;}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--orange-light));border-radius:2px;transition:width 0.3s;}
@@ -52,33 +52,38 @@ html{scroll-behavior:smooth;}
 .newsletter-form button:hover{background:var(--orange-light);}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;text-align:center;font-size:0.85rem;color:rgba(255,255,255,0.4);}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.nav-links{display:none;}.mobile-menu-btn{display:block;}.section-title{font-size:2rem;}.footer-grid{grid-template-columns:1fr;gap:2rem;}.logo-img{height:55px;}.footer-logo-img{height:60px;}}
+@media(max-width:768px){.nav-links{display:none;}.mobile-menu-btn{display:block;}.section-title{font-size:2rem;}.footer-grid{grid-template-columns:1fr;gap:2rem;}.logo-img{height:60px;}.footer-logo-img{height:60px;}}
 .page-header{min-height:50vh;background:linear-gradient(135deg,#1E1B4B 0%,#312E81 50%,#4338CA 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:10rem 5% 4rem;}
 .page-header::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(139,92,246,0.3) 0%,transparent 70%);border-radius:50%;}
 .page-header h1{font-size:3.5rem;font-weight:800;color:var(--white);position:relative;z-index:2;}
 .page-header h1 span{background:linear-gradient(135deg,var(--orange),var(--orange-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .page-header p{color:rgba(255,255,255,0.8);font-size:1.1rem;max-width:700px;margin:1rem auto 0;position:relative;z-index:2;}
 .services{padding:6rem 5%;background:var(--white);}
-.service-block{max-width:1100px;margin:0 auto 4rem;background:var(--white);border-radius:24px;padding:3rem;border:1px solid rgba(0,0,0,0.05);transition:all 0.4s ease;position:relative;overflow:hidden;}
-.service-block:last-child{margin-bottom:0;}
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;max-width:1200px;margin:0 auto;}
+.service-block{scroll-margin-top:100px;background:var(--white);border-radius:24px;padding:2.5rem;border:1px solid rgba(0,0,0,0.07);transition:all 0.3s ease;position:relative;overflow:hidden;}
+.service-image{display:block;width:100%;height:220px;object-fit:cover;border-radius:16px;margin-bottom:1.75rem;}
 .service-block::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--orange),var(--purple));transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
 .service-block:hover::before{transform:scaleX(1);}
 .service-block:hover{box-shadow:0 20px 60px rgba(0,0,0,0.08);transform:translateY(-5px);}
 .service-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem;}
-.service-icon{width:60px;height:60px;background:linear-gradient(135deg,var(--orange),var(--orange-light));border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:white;flex-shrink:0;}
-.service-block:nth-child(2) .service-icon{background:linear-gradient(135deg,var(--purple),var(--purple-light));}
-.service-block:nth-child(3) .service-icon{background:linear-gradient(135deg,#10B981,#34D399);}
-.service-block:nth-child(4) .service-icon{background:linear-gradient(135deg,#3B82F6,#60A5FA);}
 .service-header h3{font-size:1.5rem;font-weight:700;color:var(--dark);}
+.service-label{color:var(--orange-dark);font-size:0.8rem;font-weight:700;letter-spacing:0.08em;margin-bottom:0.3rem;}
+.service-description{color:var(--gray);line-height:1.7;margin-bottom:1rem;}
 .service-list{list-style:none;padding-left:0;}
 .service-list li{padding:0.6rem 0;color:var(--gray);font-size:0.95rem;display:flex;align-items:center;gap:0.8rem;border-bottom:1px solid rgba(0,0,0,0.04);}
 .service-list li:last-child{border-bottom:none;}
 .service-list li i{color:var(--orange);font-size:0.8rem;}
+.process{padding:5rem 5%;background:var(--cream);}
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+.process-step{padding:1.75rem;background:var(--white);border-radius:20px;border:1px solid rgba(0,0,0,0.06);}
+.process-number{color:var(--orange-dark);font-weight:800;font-size:0.85rem;letter-spacing:0.08em;}
+.process-step h3{margin:0.5rem 0;color:var(--dark);font-size:1.15rem;}
+.process-step p{color:var(--gray);font-size:0.92rem;line-height:1.65;}
 .cta-banner{padding:5rem 5%;background:linear-gradient(135deg,var(--dark),#312E81);text-align:center;position:relative;overflow:hidden;}
 .cta-banner::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
 .cta-banner h2{font-size:2.5rem;font-weight:700;color:var(--white);margin-bottom:1rem;position:relative;z-index:1;}
 .cta-banner p{color:rgba(255,255,255,0.7);font-size:1.1rem;max-width:600px;margin:0 auto 2rem;position:relative;z-index:1;}
-@media(max-width:768px){.page-header h1{font-size:2.5rem;}.service-block{padding:2rem;}.cta-banner h2{font-size:2rem;}}
+@media(max-width:768px){.page-header h1{font-size:2.5rem;}.services-grid,.process-grid{grid-template-columns:1fr;}.service-block{padding:2rem;}.cta-banner h2{font-size:2rem;}}
     </style>
 </head>
 <body>
@@ -88,72 +93,98 @@ html{scroll-behavior:smooth;}
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html" class="active">Services</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="our-work.html">Our Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a href="contact.html" class="nav-cta">Schedule a Consultation</a>
+        <a href="contact.html" class="nav-cta">Start a Project</a>
         <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
     </nav>
     <section class="page-header">
         <div>
-            <h1>Our <span>Services</span></h1>
-            <p>Comprehensive consulting across the entire technology lifecycle. From strategy to execution, we've got you covered.</p>
+            <h1>Web Design &amp; <span>Development</span></h1>
+            <p>From the first idea to launch and ongoing updates, I create practical websites shaped around your business, audience, and goals.</p>
         </div>
     </section>
     <section class="services">
-        <div class="service-block fade-in">
-            <div class="service-header">
-                <div class="service-icon"><i class="fas fa-chess-knight"></i></div>
-                <h3>Strategic IT Advisory</h3>
-            </div>
-            <ul class="service-list">
-                <li><i class="fas fa-check"></i> Chief Information Officer (vCIO) services</li>
-                <li><i class="fas fa-check"></i> IT budget optimization and cost reduction</li>
-                <li><i class="fas fa-check"></i> Mergers & Acquisitions (M&A) technology due diligence</li>
-                <li><i class="fas fa-check"></i> Digital transformation roadmapping</li>
-            </ul>
+        <div class="services-grid">
+            <article class="service-block fade-in" id="web-design">
+                <img class="service-image" src="web design.png" alt="Website design displayed on a desktop computer" loading="lazy">
+                <div class="service-header">
+                    <div><div class="service-label">01</div><h3>Web Design</h3></div>
+                </div>
+                <p class="service-description">Clean, modern, and intuitive website layouts that communicate your brand and make a strong first impression.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Visual direction shaped around your brand</li>
+                    <li><i class="fas fa-check"></i> Clear page structure and visitor journeys</li>
+                    <li><i class="fas fa-check"></i> Readable layouts designed with accessibility in mind</li>
+                </ul>
+            </article>
+            <article class="service-block fade-in" id="web-development">
+                <img class="service-image" src="web develop.png" alt="Responsive website development shown on a desktop computer" loading="lazy">
+                <div class="service-header">
+                    <div><div class="service-label">02</div><h3>Web Development</h3></div>
+                </div>
+                <p class="service-description">Responsive websites developed with HTML, CSS, and JavaScript, designed to work across desktop, tablet, and mobile devices.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Responsive pages for desktop, tablet, and mobile</li>
+                    <li><i class="fas fa-check"></i> Front-end development with HTML, CSS, and JavaScript</li>
+                    <li><i class="fas fa-check"></i> Browser testing and refinement</li>
+                </ul>
+            </article>
+            <article class="service-block fade-in" id="website-functionality">
+                <img class="service-image" src="web functionality.png" alt="Website interface featuring interactive digital functionality" loading="lazy">
+                <div class="service-header">
+                    <div><div class="service-label">03</div><h3>Website Functionality</h3></div>
+                </div>
+                <p class="service-description">Interactive elements, navigation, forms, and practical integrations that make your website useful and accessible.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Navigation and interactive page elements</li>
+                    <li><i class="fas fa-check"></i> Contact forms and practical integrations</li>
+                    <li><i class="fas fa-check"></i> Useful, accessible interactions for visitors</li>
+                </ul>
+            </article>
+            <article class="service-block fade-in" id="website-maintenance">
+                <img class="service-image" src="Web Maintenance .png" alt="Website maintenance and updates displayed on a computer" loading="lazy">
+                <div class="service-header">
+                    <div><div class="service-label">04</div><h3>Website Maintenance</h3></div>
+                </div>
+                <p class="service-description">Updates, improvements, troubleshooting, and ongoing support to help keep your website current.</p>
+                <ul class="service-list">
+                    <li><i class="fas fa-check"></i> Content and website updates</li>
+                    <li><i class="fas fa-check"></i> Troubleshooting and small improvements</li>
+                    <li><i class="fas fa-check"></i> Ongoing support to keep your site current</li>
+                </ul>
+            </article>
         </div>
-        <div class="service-block fade-in">
-            <div class="service-header">
-                <div class="service-icon"><i class="fas fa-cloud"></i></div>
-                <h3>Cloud & Modern Infrastructure</h3>
-            </div>
-            <ul class="service-list">
-                <li><i class="fas fa-check"></i> Cloud readiness assessments and migration (AWS, Azure, Google Cloud)</li>
-                <li><i class="fas fa-check"></i> Hybrid cloud architecture design</li>
-                <li><i class="fas fa-check"></i> Network optimization and SD-WAN deployment</li>
-                <li><i class="fas fa-check"></i> Infrastructure-as-Code and DevOps implementation</li>
-            </ul>
+    </section>
+    <section class="process">
+        <div class="section-header fade-in">
+            <span class="section-tag">How We Work</span>
+            <h2 class="section-title">A Clear Path from Idea to Website</h2>
+            <p class="section-subtitle">A collaborative process keeps your goals at the center from the first conversation through launch.</p>
         </div>
-        <div class="service-block fade-in">
-            <div class="service-header">
-                <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
-                <h3>Cybersecurity & Risk Management</h3>
-            </div>
-            <ul class="service-list">
-                <li><i class="fas fa-check"></i> Continuous vulnerability assessments and penetration testing</li>
-                <li><i class="fas fa-check"></i> Compliance readiness (HIPAA, GDPR, SOC 2, ISO 27001)</li>
-                <li><i class="fas fa-check"></i> Incident response planning and disaster recovery (DRaaS)</li>
-                <li><i class="fas fa-check"></i> Security awareness training and phishing simulations</li>
-            </ul>
-        </div>
-        <div class="service-block fade-in">
-            <div class="service-header">
-                <div class="service-icon"><i class="fas fa-robot"></i></div>
-                <h3>Software & Digital Transformation</h3>
-            </div>
-            <ul class="service-list">
-                <li><i class="fas fa-check"></i> Enterprise resource planning (ERP) and CRM selection/implementation</li>
-                <li><i class="fas fa-check"></i> Business process automation (RPA)</li>
-                <li><i class="fas fa-check"></i> Data analytics, business intelligence (BI), and AI readiness</li>
-                <li><i class="fas fa-check"></i> Custom software development advisory</li>
-            </ul>
+        <div class="process-grid">
+            <article class="process-step fade-in">
+                <span class="process-number">STEP 01</span>
+                <h3>Understand Your Goals</h3>
+                <p>I learn about your business, audience, content, and priorities to shape a clear project direction.</p>
+            </article>
+            <article class="process-step fade-in">
+                <span class="process-number">STEP 02</span>
+                <h3>Design and Build</h3>
+                <p>I design and develop your website, keeping you involved through regular communication and feedback.</p>
+            </article>
+            <article class="process-step fade-in">
+                <span class="process-number">STEP 03</span>
+                <h3>Review and Support</h3>
+                <p>We refine the site together, prepare it for launch, and discuss any ongoing maintenance you need.</p>
+            </article>
         </div>
     </section>
     <section class="cta-banner">
-        <h2>Ready to Transform Your Technology?</h2>
-        <p>Let's discuss how Orange Coeur can help your business thrive in the digital age.</p>
-        <a href="contact.html" class="btn-primary"><i class="fas fa-calendar-check"></i>Schedule a Consultation</a>
+        <h2>Have a Website Project in Mind?</h2>
+        <p>Let’s talk about what you need and how to create a digital experience that works for your business.</p>
+        <a href="contact.html" class="btn-primary"><i class="fas fa-comments"></i>Start a Project</a>
     </section>
     <footer class="footer">
         <div class="footer-grid">
@@ -172,7 +203,7 @@ html{scroll-behavior:smooth;}
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="our-work.html">Our Work</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>

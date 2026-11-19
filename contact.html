@@ -13,7 +13,7 @@ body{font-family:'Poppins',sans-serif;color:var(--dark);overflow-x:hidden;backgr
 html{scroll-behavior:smooth;}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.6rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 2px 20px rgba(0,0,0,0.08);}
 .logo{display:flex;align-items:center;text-decoration:none;}
-.logo-img{height:70px;width:auto;object-fit:contain;border-radius:8px;}
+.logo-img{height:80px;width:auto;object-fit:contain;border-radius:8px;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{color:var(--dark);text-decoration:none;font-weight:500;font-size:0.95rem;position:relative;transition:color 0.3s;padding:0.5rem 0;}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--orange-light));border-radius:2px;transition:width 0.3s;}
@@ -52,21 +52,23 @@ html{scroll-behavior:smooth;}
 .newsletter-form button:hover{background:var(--orange-light);}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;text-align:center;font-size:0.85rem;color:rgba(255,255,255,0.4);}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.nav-links{display:none;}.mobile-menu-btn{display:block;}.section-title{font-size:2rem;}.footer-grid{grid-template-columns:1fr;gap:2rem;}.logo-img{height:55px;}.footer-logo-img{height:60px;}}
+@media(max-width:768px){.nav-links{display:none;}.mobile-menu-btn{display:block;}.section-title{font-size:2rem;}.footer-grid{grid-template-columns:1fr;gap:2rem;}.logo-img{height:60px;}.footer-logo-img{height:60px;}}
 .page-header{min-height:45vh;background:linear-gradient(135deg,#1E1B4B 0%,#312E81 50%,#4338CA 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:10rem 5% 4rem;}
 .page-header::before{content:'';position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(139,92,246,0.3) 0%,transparent 70%);border-radius:50%;}
 .page-header h1{font-size:3.5rem;font-weight:800;color:var(--white);position:relative;z-index:2;}
 .page-header h1 span{background:linear-gradient(135deg,var(--orange),var(--orange-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.page-header p{color:rgba(255,255,255,0.8);font-size:1.1rem;max-width:600px;margin:1rem auto 0;position:relative;z-index:2;}
+.page-header h2{color:var(--white);font-size:1.5rem;margin-top:1rem;position:relative;z-index:2;}
+.page-header p{color:rgba(255,255,255,0.8);font-size:1.1rem;max-width:700px;margin:1rem auto 0;position:relative;z-index:2;}
 .contact-section{padding:6rem 5%;background:var(--white);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start;}
+.contact-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start;}
 .contact-form{background:var(--white);border-radius:24px;padding:2.5rem;border:1px solid rgba(0,0,0,0.05);box-shadow:0 10px 40px rgba(0,0,0,0.05);}
+.contact-form h2{font-size:1.5rem;margin-bottom:1.5rem;color:var(--dark);}
 .form-group{margin-bottom:1.5rem;}
 .form-group label{display:block;font-size:0.9rem;font-weight:600;color:var(--dark);margin-bottom:0.5rem;}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.9rem 1.2rem;border:2px solid var(--light-gray);border-radius:12px;font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--dark);transition:border-color 0.3s;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.9rem 1.2rem;border:2px solid var(--light-gray);border-radius:12px;font-family:'Poppins',sans-serif;font-size:0.95rem;color:var(--dark);transition:border-color 0.3s;background:var(--white);}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--orange);}
-.form-group textarea{resize:vertical;min-height:120px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-group textarea{resize:vertical;min-height:150px;}
+.form-group small{display:block;color:var(--gray);font-size:0.8rem;margin-top:0.4rem;}
 .form-group button{width:100%;padding:1rem;background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:white;border:none;border-radius:50px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.3s;box-shadow:0 8px 30px rgba(242,101,34,0.3);}
 .form-group button:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,101,34,0.4);}
 .contact-info{padding-top:1rem;}
@@ -77,8 +79,8 @@ html{scroll-behavior:smooth;}
 .info-item div p{color:var(--gray);font-size:0.9rem;line-height:1.5;}
 .info-item div a{color:var(--orange);text-decoration:none;font-weight:500;}
 .info-item div a:hover{text-decoration:underline;}
-.response-badge{display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,rgba(242,101,34,0.1),rgba(255,140,66,0.05));color:var(--orange);padding:0.6rem 1.2rem;border-radius:50px;font-size:0.85rem;font-weight:600;margin-top:1rem;border:1px solid rgba(242,101,34,0.15);}
-@media(max-width:768px){.page-header h1{font-size:2.5rem;}.contact-grid{grid-template-columns:1fr;gap:2rem;}.form-row{grid-template-columns:1fr;}}
+.contact-thanks{margin-top:2rem;color:var(--dark);font-weight:600;}
+@media(max-width:768px){.page-header h1{font-size:2.5rem;}.contact-grid{grid-template-columns:1fr;gap:2rem;}.contact-form{padding:1.75rem;}}
 </style>
 </head>
 <body>
@@ -88,47 +90,41 @@ html{scroll-behavior:smooth;}
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="services.html">Services</a></li>
-<li><a href="case-studies.html">Case Studies</a></li>
+<li><a href="our-work.html">Our Work</a></li>
 <li><a href="contact.html" class="active">Contact</a></li>
 </ul>
-<a href="contact.html" class="nav-cta">Schedule a Consultation</a>
+<a href="contact.html" class="nav-cta">Start a Project</a>
 <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
 </nav>
-<section class="page-header"><div><h1>Get In <span>Touch</span></h1><p>Ready to Transform Your Technology? Let's Talk. An expert consultant — not a salesperson — will reach out within 24 business hours.</p></div></section>
+<section class="page-header"><div><span class="section-tag">Orange Coeur Consulting</span><h1>Let's Build Something <span>Together.</span></h1><h2>Tell Me About Your Website Project.</h2><p>Whether you are launching a new business, establishing your online presence, or improving an existing website, I would be happy to discuss your project.</p></div></section>
 <section class="contact-section">
 <div class="contact-grid">
 <div class="contact-form fade-in">
-<form id="contact-form" action="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ocorangecoeur@gmail.com">
-<div class="form-row">
-<div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="First Name" placeholder="John" required></div>
-<div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="Last Name" placeholder="Doe" required></div>
-</div>
-<div class="form-row">
-<div class="form-group"><label for="company">Company Name</label><input type="text" id="company" name="Company" placeholder="Your Company"></div>
-<div class="form-group"><label for="title">Job Title</label><input type="text" id="title" name="Job Title" placeholder="e.g. CTO"></div>
-</div>
-<div class="form-row">
-<div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="Email" placeholder="john@company.com" required></div>
-<div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="Phone" placeholder="+1 (555) 000-0000"></div>
-</div>
-<div class="form-group"><label for="service">What can we help you with?</label><select id="service" name="Service Needed"><option value="">Select a service...</option><option value="IT Strategy">IT Strategy</option><option value="Cloud">Cloud & Infrastructure</option><option value="Cyber Security">Cybersecurity</option><option value="Custom Project">Custom Project</option><option value="Other">Other</option></select></div>
-<div class="form-group"><label for="message">Message / Brief Project Description</label><textarea id="message" name="Message" placeholder="Tell us about your project..."></textarea></div>
-<div class="form-group"><button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button></div>
+<form id="contact-form" action="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@orangecoeurconsulting.com">
+<h2>Project Inquiry Form</h2>
+<div class="form-group"><label for="name">Name</label><input type="text" id="name" name="Name" autocomplete="name" required></div>
+<div class="form-group"><label for="business">Business / Organization</label><input type="text" id="business" name="Business / Organization" autocomplete="organization"></div>
+<div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="Email Address" autocomplete="email" required></div>
+<div class="form-group"><label for="website">Website (if available)</label><input type="url" id="website" name="Website" placeholder="https://example.com" inputmode="url"></div>
+<div class="form-group"><label for="service">What do you need?</label><select id="service" name="Project Type" required><option value="">Select a project type...</option><option>New Business Website</option><option>Website Redesign</option><option>Website Development</option><option>Website Updates &amp; Maintenance</option><option>Other</option></select></div>
+<div class="form-group"><label for="budget">Project Budget</label><select id="budget" name="Project Budget"><option value="">Select a budget range...</option><option>Under $1,000</option><option>$1,000–$2,500</option><option>$2,500–$5,000</option><option>$5,000+</option></select></div>
+<div class="form-group"><label for="message">Project Description</label><textarea id="message" name="Project Description" placeholder="Tell me about your business, what you want to achieve, and what you need from your website." required></textarea><small>Tell me about your business, what you want to achieve, and what you need from your website.</small></div>
+<div class="form-group"><button type="submit"><i class="fas fa-paper-plane"></i> Submit Project Inquiry</button></div>
 </form>
 </div>
 <div class="contact-info fade-in">
-<h3>Direct Contact Info</h3>
-<div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ocorangecoeur@gmail.com">ocorangecoeur@gmail.com</a></p></div></div>
-<div class="info-item"><div class="info-icon"><i class="fas fa-clock"></i></div><div><h4>Response Time</h4><p>Within 24 business hours</p></div></div>
-<div class="info-item"><div class="info-icon"><i class="fas fa-headset"></i></div><div><h4>Consultation</h4><p>Speak with an expert consultant, not a salesperson</p></div></div>
-<div class="response-badge"><i class="fas fa-bolt"></i> Expert response guaranteed within 24 hours</div>
+<h3>Direct Contact</h3>
+<div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><p><a href="mailto:info@orangecoeurconsulting.com">info@orangecoeurconsulting.com</a></p></div></div>
+<div class="info-item"><div class="info-icon"><i class="fas fa-location-dot"></i></div><div><h4>Location</h4><p>Chicago, Illinois, USA</p></div></div>
+<p>Orange Coeur works directly with clients to understand their requirements and develop practical digital solutions.</p>
+<p class="contact-thanks">Thank you for considering Orange Coeur.</p>
 </div>
 </div>
 </section>
 <footer class="footer">
 <div class="footer-grid">
 <div class="footer-brand"><img src="logo.jpg" alt="Orange Coeur" class="footer-logo-img"><p>IT Strategy with Heart. Innovation with Purpose. We bridge the gap between complex technology and your core business goals.</p><div class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a></div></div>
-<div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="our-work.html">Our Work</a></li><li><a href="contact.html">Contact</a></li></ul></div>
 <div class="footer-links"><h4>Legal</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Cookie Policy</a></li></ul></div>
 <div class="newsletter"><h4>Stay Ahead of IT Trends</h4><p>Subscribe to our monthly brief for the latest insights.</p><form class="newsletter-form"><input type="email" placeholder="Enter your email"><button type="submit">Subscribe</button></form></div>
 </div>
@@ -142,7 +138,7 @@ const mobileMenuBtn=document.querySelector('.mobile-menu-btn');
 const navLinks=document.querySelector('.nav-links');
 if(mobileMenuBtn){mobileMenuBtn.addEventListener('click',()=>{navLinks.style.display=navLinks.style.display==='flex'?'none':'flex';navLinks.style.position='absolute';navLinks.style.top='70px';navLinks.style.left='0';navLinks.style.right='0';navLinks.style.flexDirection='column';navLinks.style.background='white';navLinks.style.padding='2rem';navLinks.style.boxShadow='0 10px 40px rgba(0,0,0,0.1)';navLinks.style.gap='1.5rem';});}
 const contactForm=document.querySelector('#contact-form');
-if(contactForm){contactForm.addEventListener('submit',(event)=>{event.preventDefault();const formData=new FormData(contactForm);const fullName=[formData.get('First Name'),formData.get('Last Name')].filter(Boolean).join(' ');const subject=fullName?`Website inquiry from ${fullName}`:'Website inquiry';const body=Array.from(formData.entries()).map(([label,value])=>`${label}: ${value}`).join('\n');const params=new URLSearchParams({view:'cm',fs:'1',to:'ocorangecoeur@gmail.com',su:subject,body});window.location.href=`https://mail.google.com/mail/?${params}`;});}
+if(contactForm){contactForm.addEventListener('submit',(event)=>{event.preventDefault();const formData=new FormData(contactForm);const name=formData.get('Name');const subject=`Website project inquiry from ${name}`;const body=Array.from(formData.entries()).map(([label,value])=>`${label}: ${value}`).join('\n');const params=new URLSearchParams({view:'cm',fs:'1',to:'info@orangecoeurconsulting.com',su:subject,body});window.location.href=`https://mail.google.com/mail/?${params}`;});}
 </script>
 </body>
 </html>

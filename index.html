@@ -13,7 +13,7 @@ body{font-family:'Poppins',sans-serif;color:var(--dark);overflow-x:hidden;backgr
 html{scroll-behavior:smooth;}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.6rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);box-shadow:0 2px 20px rgba(0,0,0,0.08);}
 .logo{display:flex;align-items:center;text-decoration:none;}
-.logo-img{height:70px;width:auto;object-fit:contain;border-radius:8px;}
+.logo-img{height:80px;width:auto;object-fit:contain;border-radius:8px;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
 .nav-links a{color:var(--dark);text-decoration:none;font-weight:500;font-size:0.95rem;position:relative;transition:color 0.3s;padding:0.5rem 0;}
 .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--orange-light));border-radius:2px;transition:width 0.3s;}
@@ -55,7 +55,7 @@ html{scroll-behavior:smooth;}
 .newsletter-form button:hover{background:var(--orange-light);}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;text-align:center;font-size:0.85rem;color:rgba(255,255,255,0.4);}
 @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:768px){.nav-links{display:none;}.mobile-menu-btn{display:block;}.section-title{font-size:2rem;}.footer-grid{grid-template-columns:1fr;gap:2rem;}.logo-img{height:55px;}.footer-logo-img{height:60px;}}
+@media(max-width:768px){.nav-links{display:none;}.mobile-menu-btn{display:block;}.section-title{font-size:2rem;}.footer-grid{grid-template-columns:1fr;gap:2rem;}.logo-img{height:60px;}.footer-logo-img{height:60px;}}
 .hero{min-height:100vh;background:linear-gradient(135deg,#1E1B4B 0%,#312E81 50%,#4338CA 100%);position:relative;overflow:hidden;display:flex;align-items:center;padding:10rem 5% 6rem;}
 .hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(139,92,246,0.3) 0%,transparent 70%);border-radius:50%;animation:float 8s ease-in-out infinite;}
 .hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(242,101,34,0.2) 0%,transparent 70%);border-radius:50%;animation:float 10s ease-in-out infinite reverse;}
@@ -67,7 +67,10 @@ html{scroll-behavior:smooth;}
 .hero-tagline{font-size:1.35rem;font-weight:600;color:var(--white);margin-bottom:0.75rem;}
 .hero-subtitle{font-size:1.2rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:2.5rem;max-width:600px;}
 .hero-services{display:flex;flex-wrap:wrap;gap:0.65rem;list-style:none;margin:-1rem 0 2rem;}
-.hero-services li{padding:0.45rem 0.9rem;border:1px solid rgba(255,255,255,0.22);border-radius:50px;background:rgba(255,255,255,0.08);color:var(--white);font-size:0.9rem;font-weight:500;}
+.hero-services li{border:1px solid rgba(255,255,255,0.22);border-radius:50px;background:rgba(255,255,255,0.08);color:var(--white);font-size:0.9rem;font-weight:500;transition:background 0.2s,border-color 0.2s;}
+.hero-services a{display:block;padding:0.45rem 0.9rem;color:inherit;text-decoration:none;}
+.hero-services li:hover,.hero-services li:focus-within{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.5);}
+.hero-services a:focus-visible{outline:2px solid var(--white);outline-offset:3px;border-radius:50px;}
 .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;}
 .hero-visual{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:500px;height:500px;z-index:1;}
 .hero-visual .heart-orange{width:300px;height:300px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
@@ -77,38 +80,50 @@ html{scroll-behavior:smooth;}
 .shape-2{width:80px;height:80px;background:linear-gradient(135deg,var(--purple),var(--purple-light));bottom:20%;left:10%;animation:floatShape 8s ease-in-out infinite reverse;border-radius:60% 40% 30% 70% / 60% 30% 70% 40%;}
 .shape-3{width:60px;height:60px;background:rgba(255,255,255,0.1);top:30%;left:5%;animation:floatShape 7s ease-in-out infinite;border-radius:50%;}
 @keyframes floatShape{0%,100%{transform:translate(0,0) rotate(0deg);}50%{transform:translate(20px,-20px) rotate(10deg);}}
-.why-us{padding:8rem 5%;background:var(--cream);}
-.why-us-content{max-width:900px;margin:0 auto;text-align:center;}
-.why-us-text{font-size:1.3rem;color:var(--dark);line-height:1.8;font-weight:400;}
-.why-us-text strong{color:var(--orange);font-weight:600;}
-.capabilities{padding:8rem 5%;background:var(--white);}
-.capabilities-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:2rem;max-width:1200px;margin:0 auto;}
-.capability-card{background:var(--white);border-radius:24px;padding:2.5rem;transition:all 0.4s ease;border:1px solid rgba(0,0,0,0.05);position:relative;overflow:hidden;}
-.capability-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--orange),var(--purple));transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
-.capability-card:hover::before{transform:scaleX(1);}
-.capability-card:hover{transform:translateY(-10px);box-shadow:0 20px 60px rgba(0,0,0,0.1);}
-.capability-icon{width:70px;height:70px;background:linear-gradient(135deg,var(--orange),var(--orange-light));border-radius:20px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.8rem;color:white;transition:transform 0.3s;}
-.capability-card:hover .capability-icon{transform:scale(1.1) rotate(5deg);}
-.capability-card:nth-child(2) .capability-icon{background:linear-gradient(135deg,var(--purple),var(--purple-light));}
-.capability-card:nth-child(3) .capability-icon{background:linear-gradient(135deg,#10B981,#34D399);}
-.capability-card:nth-child(4) .capability-icon{background:linear-gradient(135deg,#3B82F6,#60A5FA);}
-.capability-card h3{font-size:1.3rem;font-weight:700;color:var(--dark);margin-bottom:1rem;}
-.capability-card p{color:var(--gray);line-height:1.7;font-size:0.95rem;}
-@media(max-width:768px){.capabilities-grid{grid-template-columns:1fr;}}
-.trust{padding:6rem 5%;background:linear-gradient(135deg,var(--dark),#312E81);position:relative;overflow:hidden;}
-.trust::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
-.trust-content{position:relative;z-index:1;text-align:center;}
-.trust .section-title{color:var(--white);}
-.trust .section-subtitle{color:rgba(255,255,255,0.7);}
-.industries-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin:3rem 0;}
-.industry-item{display:flex;flex-direction:column;align-items:center;gap:0.8rem;color:rgba(255,255,255,0.8);font-weight:500;}
-.industry-item i{font-size:2.5rem;color:var(--orange-light);}
-.stats-row{display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;margin-top:3rem;}
-.stat-item{text-align:center;}
-.stat-number{font-size:3.5rem;font-weight:800;background:linear-gradient(135deg,var(--orange),var(--orange-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.stat-label{color:rgba(255,255,255,0.7);font-size:0.95rem;margin-top:0.5rem;}
+.audience{padding:6rem 5%;background:var(--cream);}
+.audience-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;max-width:1200px;margin:0 auto;}
+.audience-card{overflow:hidden;background:var(--white);border:1px solid rgba(0,0,0,0.07);border-radius:20px;box-shadow:0 8px 24px rgba(30,27,75,0.05);transition:transform 0.3s ease,box-shadow 0.3s ease;}
+.audience-card:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(30,27,75,0.12);}
+.audience-card img{display:block;width:100%;height:180px;object-fit:cover;transition:transform 0.4s ease;}
+.audience-card:hover img{transform:scale(1.04);}
+.audience-card-content{padding:1.4rem 1.5rem 1.6rem;}
+.audience-card h3{font-size:1.1rem;margin-bottom:0.6rem;}
+.audience-card p{color:var(--gray);font-size:0.9rem;line-height:1.65;}
+.why-us{padding:6rem 5%;background:linear-gradient(135deg,var(--dark),#312E81);position:relative;overflow:hidden;}
+.why-us .section-title{color:var(--white);}
+.why-us .section-subtitle{color:rgba(255,255,255,0.76);}
+.why-us-intro{max-width:900px;margin:0 auto 2.5rem;text-align:center;color:rgba(255,255,255,0.86);font-size:1.05rem;line-height:1.8;}
+.principles-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+.principle-card{padding:1.75rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:20px;color:var(--white);}
+.principle-card i{font-size:1.7rem;color:var(--orange-light);margin-bottom:1rem;}
+.principle-card h3{font-size:1.1rem;margin-bottom:0.6rem;}
+.principle-card p{font-size:0.9rem;color:rgba(255,255,255,0.78);line-height:1.65;}
+.selected-work{padding:6rem 5%;background:var(--white);}
+.selected-work-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;max-width:1200px;margin:0 auto;}
+.project-card{overflow:hidden;background:var(--white);border:1px solid rgba(0,0,0,0.08);border-radius:20px;}
+.project-visual{height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#F8FAFC;}
+.project-visual img{display:block;width:100%;height:100%;object-fit:contain;padding:1rem;}
+.project-card:nth-child(3) .project-visual img{padding:0;object-fit:cover;}
+.project-content{padding:1.5rem;}
+.project-type{display:inline-block;margin-bottom:0.75rem;color:var(--orange-dark);font-size:0.76rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;}
+.project-content h3{font-size:1.15rem;margin-bottom:0.65rem;}
+.project-content p{color:var(--gray);font-size:0.9rem;line-height:1.65;}
+.project-links{display:grid;gap:0.45rem;margin-top:1rem;padding:0;list-style:none;}
+.project-links a,.project-site-link{color:var(--orange-dark);font-size:0.88rem;font-weight:600;text-decoration:none;}
+.project-links a:hover,.project-site-link:hover{text-decoration:underline;}
+.project-site-link{display:inline-block;margin-top:1rem;}
+.project-note{margin-top:0.8rem;color:var(--gray);font-size:0.8rem;font-style:italic;}
+.selected-work-link{margin-top:2rem;text-align:center;}
+.selected-work-link a{color:var(--orange-dark);font-weight:600;text-decoration:none;}
+.selected-work-link a:hover{text-decoration:underline;}
+.final-cta{padding:5rem 5%;background:var(--cream);text-align:center;}
+.final-cta h2{font-size:2.4rem;color:var(--dark);margin-bottom:0.8rem;}
+.final-cta p{max-width:700px;margin:0 auto 1.75rem;color:var(--gray);font-size:1.1rem;}
+.final-cta .btn-primary{color:var(--white);}
 @media(max-width:1024px){.hero-visual{display:none;}.hero h1{font-size:3rem;}}
-@media(max-width:768px){.hero h1{font-size:2.5rem;}.hero-subtitle{font-size:1rem;}.stats-row{gap:2rem;}.stat-number{font-size:2.5rem;}}
+@media(max-width:900px){.audience-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.selected-work-grid{grid-template-columns:1fr 1fr;}.project-card:last-child{grid-column:1/-1;}}
+@media(max-width:768px){.hero h1{font-size:2.5rem;}.hero-subtitle{font-size:1rem;}.audience-grid,.principles-grid{grid-template-columns:1fr;}.selected-work-grid{grid-template-columns:1fr;}.project-card:last-child{grid-column:auto;}.final-cta h2{font-size:2rem;}}
+@media(max-width:480px){.audience-grid{grid-template-columns:1fr;}}
     </style>
 </head>
 <body>
@@ -118,10 +133,10 @@ html{scroll-behavior:smooth;}
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="case-studies.html">Case Studies</a></li>
+            <li><a href="our-work.html">Our Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a href="contact.html" class="nav-cta">Schedule a Consultation</a>
+        <a href="contact.html" class="nav-cta">Start a Project</a>
         <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
     </nav>
     <section class="hero" id="home">
@@ -129,12 +144,12 @@ html{scroll-behavior:smooth;}
             <div class="hero-badge">ORANGE COEUR</div>
             <h1>Design. <span>Engineer.</span> Transform.</h1>
             <p class="hero-tagline">Digital experiences built around business needs.</p>
-            <p class="hero-subtitle">We design and engineer modern websites, digital platforms, and custom technology solutions that help businesses grow.</p>
+            <p class="hero-subtitle">I design and build modern websites that help businesses connect with their audiences and grow.</p>
             <ul class="hero-services" aria-label="Our services">
-                <li>Web Design</li>
-                <li>Web Development</li>
-                <li>Software Engineering</li>
-                <li>AI Integration</li>
+                <li><a href="services.html#web-design">Web Design</a></li>
+                <li><a href="services.html#web-development">Web Development</a></li>
+                <li><a href="services.html#website-functionality">Website Functionality</a></li>
+                <li><a href="services.html#website-maintenance">Website Maintenance</a></li>
             </ul>
             <div class="hero-buttons">
                 <a href="contact.html" class="btn-primary"><i class="fas fa-calendar-check"></i>Start a Project</a>
@@ -163,65 +178,112 @@ html{scroll-behavior:smooth;}
             </div>
         </div>
     </section>
-    <section class="why-us" id="why-us">
+    <section class="audience" id="who-i-work-with">
         <div class="section-header fade-in">
-            <span class="section-tag">Our Philosophy</span>
-            <h2 class="section-title">IT Strategy with Heart. Innovation with Purpose.</h2>
-            <p class="section-subtitle">We don't believe in one-size-fits-all solutions</p>
+            <span class="section-tag">Who I Work With</span>
+            <h2 class="section-title">Digital Solutions for Organizations with Something to Build.</h2>
         </div>
-        <div class="why-us-content fade-in">
-            <p class="why-us-text">Technology is powerful, but only when it serves your business objectives. At <strong>Orange Coeur</strong>, we don't believe in one-size-fits-all tech. We immerse ourselves in your operations to design, secure, and scale IT ecosystems that drive actual growth.</p>
+        <div class="audience-grid">
+            <article class="audience-card fade-in">
+                <img src="small.bussiness.jpg" alt="Small business owner working at a laptop" loading="lazy">
+                <div class="audience-card-content">
+                    <h3>Small Businesses</h3>
+                    <p>Establish a professional online presence that helps customers understand what you do.</p>
+                </div>
+            </article>
+            <article class="audience-card fade-in">
+                <img src="startup.jpg" alt="Startup team collaborating around a shared idea" loading="lazy">
+                <div class="audience-card-content">
+                    <h3>Startups</h3>
+                    <p>Launch your new business with a website built around its vision.</p>
+                </div>
+            </article>
+            <article class="audience-card fade-in">
+                <img src="nonforprof.jpg" alt="Nonprofit community program participants gathered together" loading="lazy">
+                <div class="audience-card-content">
+                    <h3>Nonprofit Organizations</h3>
+                    <p>Communicate your mission, programs, and impact with clarity.</p>
+                </div>
+            </article>
+            <article class="audience-card fade-in">
+                <img src="profservis.jpg" alt="Professional advising a client at a computer" loading="lazy">
+                <div class="audience-card-content">
+                    <h3>Professional Services</h3>
+                    <p>Present your expertise and connect with prospective clients.</p>
+                </div>
+            </article>
         </div>
     </section>
-    <section class="capabilities" id="capabilities">
+    <section class="why-us" id="why-orange-coeur">
         <div class="section-header fade-in">
-            <span class="section-tag">Our Expertise</span>
-            <h2 class="section-title">Core Capabilities</h2>
-            <p class="section-subtitle">Comprehensive IT solutions tailored to your needs</p>
+            <span class="section-tag">Why Orange Coeur</span>
+            <h2 class="section-title">Technology with Purpose. Design with Intention.</h2>
         </div>
-        <div class="capabilities-grid">
-            <div class="capability-card fade-in">
-                <div class="capability-icon"><i class="fas fa-chess-knight"></i></div>
-                <h3>IT Strategy & Transformation</h3>
-                <p>Aligning your tech roadmap with your business vision for sustainable growth and competitive advantage.</p>
-            </div>
-            <div class="capability-card fade-in">
-                <div class="capability-icon"><i class="fas fa-cloud"></i></div>
-                <h3>Cloud & Infrastructure</h3>
-                <p>Seamless migrations and optimized multi-cloud management for maximum efficiency and scalability.</p>
-            </div>
-            <div class="capability-card fade-in">
-                <div class="capability-icon"><i class="fas fa-shield-halved"></i></div>
-                <h3>Cybersecurity & Compliance</h3>
-                <p>Protecting your digital assets and ensuring regulatory alignment across all operations.</p>
-            </div>
-            <div class="capability-card fade-in">
-                <div class="capability-icon"><i class="fas fa-robot"></i></div>
-                <h3>Digital Innovation</h3>
-                <p>Implementing AI, automation, and data analytics to keep you ahead of the competition.</p>
-            </div>
+        <p class="why-us-intro fade-in">Every project starts with understanding what the business needs. I combine technical development, analytical thinking, and project coordination to create websites that are practical, accessible, and aligned with business objectives.</p>
+        <div class="principles-grid">
+            <article class="principle-card fade-in">
+                <i class="fas fa-comments" aria-hidden="true"></i>
+                <h3>Personal Attention</h3>
+                <p>Direct communication and thoughtful collaboration throughout the project.</p>
+            </article>
+            <article class="principle-card fade-in">
+                <i class="fas fa-bullseye" aria-hidden="true"></i>
+                <h3>Purposeful Design</h3>
+                <p>Every design decision serves a business objective and your audience’s needs.</p>
+            </article>
+            <article class="principle-card fade-in">
+                <i class="fas fa-code" aria-hidden="true"></i>
+                <h3>Practical Development</h3>
+                <p>Reliable, responsive websites without unnecessary complexity.</p>
+            </article>
         </div>
     </section>
-    <section class="trust" id="trust">
-        <div class="trust-content">
-            <div class="section-header fade-in">
-                <span class="section-tag">Trusted By Industry Leaders</span>
-                <h2 class="section-title">Industries We Serve</h2>
-                <p class="section-subtitle">Delivering results across diverse sectors</p>
-            </div>
-            <div class="industries-grid fade-in">
-                <div class="industry-item"><i class="fas fa-hospital"></i><span>Healthcare</span></div>
-                <div class="industry-item"><i class="fas fa-building-columns"></i><span>Finance</span></div>
-                <div class="industry-item"><i class="fas fa-truck-fast"></i><span>Logistics</span></div>
-                <div class="industry-item"><i class="fas fa-industry"></i><span>Manufacturing</span></div>
-                <div class="industry-item"><i class="fas fa-shop"></i><span>Retail</span></div>
-            </div>
-            <div class="stats-row fade-in">
-                <div class="stat-item"><div class="stat-number">98%</div><div class="stat-label">Client Retention Rate</div></div>
-                <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Years Avg. Consultant Experience</div></div>
-                <div class="stat-item"><div class="stat-number">24h</div><div class="stat-label">Response Time</div></div>
-            </div>
+    <section class="selected-work" id="selected-work">
+        <div class="section-header fade-in">
+            <span class="section-tag">Selected Work</span>
+            <h2 class="section-title">Turning Ideas into Digital Experiences.</h2>
+            <p class="section-subtitle">A selection of contract and self-initiated work, clearly identified.</p>
         </div>
+        <div class="selected-work-grid">
+            <article class="project-card fade-in">
+                <div class="project-visual"><img src="sim-logo.png" alt="SIM Chicago logo" loading="lazy"></div>
+                <div class="project-content">
+                    <span class="project-type">Documented Project · Contract Work</span>
+                    <h3>SIM Chicago — Executive Women in Tech</h3>
+                    <p>A responsive, multi-page website with interactive navigation, speaker profiles, event information, and sponsor sections. Built with HTML5, CSS3, and JavaScript using a mobile-first approach.</p>
+                    <ul class="project-links">
+                        <li><a href="https://ocromley.github.io/sim-chicago-event-June/" target="_blank" rel="noopener noreferrer">SIM Chicago Event</a></li>
+                        <li><a href="https://ocromley.github.io/cio-of-the-year-candidates/" target="_blank" rel="noopener noreferrer">CIO of the Year Candidates</a></li>
+                        <li><a href="https://ocromley.github.io/November-18-2026-SIM-Gala-and-CIO-/" target="_blank" rel="noopener noreferrer">SIM Gala and CIO Awards</a></li>
+                        <li><a href="https://ocromley.github.io/SIM_Intent_Engineering/index.html/" target="_blank" rel="noopener noreferrer">Intent Engineering Event</a></li>
+                    </ul>
+                </div>
+            </article>
+            <article class="project-card fade-in">
+                <div class="project-visual"><img src="OC.consulting.png" alt="Orange Coeur logo" loading="lazy"></div>
+                <div class="project-content">
+                    <span class="project-type">In-House Brand and Website Development</span>
+                    <h3>Orange Coeur</h3>
+                    <p>Company website and brand implementation, including service presentation, responsive layouts, and a business contact experience.</p>
+                    <a class="project-site-link" href="index.html">View the Orange Coeur website <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </article>
+            <article class="project-card fade-in">
+                <div class="project-visual"><img src="Proposed self cont..png" alt="Proposed Orange Coeur business website concept shown on laptop and phone" loading="lazy"></div>
+                <div class="project-content">
+                    <span class="project-type">Proposed Self-Initiated Concept · Not Yet Built</span>
+                    <h3>Business Website Concept</h3>
+                    <p>A recommended demonstration project exploring business website structure, responsive layouts, and front-end development.</p>
+                    <p class="project-note">This is a proposed concept, not a completed project or client engagement.</p>
+                </div>
+            </article>
+        </div>
+        <div class="selected-work-link"><a href="our-work.html">Explore Our Work <i class="fas fa-arrow-right"></i></a></div>
+    </section>
+    <section class="final-cta">
+        <h2>Have a Website Project in Mind?</h2>
+        <p>Let’s turn your idea into a digital experience that works for your business.</p>
+        <a href="contact.html" class="btn-primary">Start a Project <i class="fas fa-arrow-right"></i></a>
     </section>
     <footer class="footer">
         <div class="footer-grid">
@@ -240,7 +302,7 @@ html{scroll-behavior:smooth;}
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="our-work.html">Our Work</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
